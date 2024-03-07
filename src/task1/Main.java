@@ -31,12 +31,12 @@ public class Main {
 
         Stream<Integer> stream5 = listOfIntegers.stream();
         System.out.print("\nВыводим количество элементов в стриме\nрезультат:");
-        System.out.println(stream5.count());
+        long count = stream5.count();
+        System.out.println(count);
 
         Stream<Integer> stream6 = listOfIntegers.stream();
         System.out.print("\nВыводим среднее арифметическое всех чисел в стриме\nрезультат:");
-        System.out.println(stream6.reduce((x, y) -> { return x + y;
-        }).get());
+        System.out.println(stream6.reduce(Integer::sum).get() / count);
 
         int sum = 0;
         for (Integer intehre : listOfIntegers) {
